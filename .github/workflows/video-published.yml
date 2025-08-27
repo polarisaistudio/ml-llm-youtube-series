@@ -1,0 +1,29 @@
+name: Post-Video Publication Tasks
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  post-publication:
+    if: contains(github.event.issue.labels.*.name, 'video-production')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract day number from issue
+        id: extract_day
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          DAY_NUMBER=$(echo "$ISSUE_TITLE" | grep -o 'Day [0-9]*' | grep -o '[0-9]*')
+          echo "day_number=$DAY_NUMBER" >> $GITHUB_OUTPUT
+          
+      - name: Update README progress
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Update the main README with completed status
+          echo "Day ${{ steps.extract_day.outputs.day_number }} completed! 🎉"
+          
+      - name: Generate week recap
+        if: ${{ steps.extract_day.outputs.day_number }} % 7 == 0
+        run: |
+          echo "Week recap needed for Day ${{ steps.extract_day.outputs.day_number }}"

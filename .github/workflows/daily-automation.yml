@@ -1,0 +1,49 @@
+name: Daily Video Production Automation
+
+on:
+  schedule:
+    # Run at 8 AM UTC every day
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      day_number:
+        description: 'Day number for video production'
+        required: true
+        default: '1'
+
+jobs:
+  setup-daily-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install openai anthropic requests
+          
+      - name: Create daily issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DAY_NUMBER=${{ github.event.inputs.day_number || github.run_number }}
+          gh issue create \
+            --title "Day $DAY_NUMBER: Video Production" \
+            --body "Automated issue for Day $DAY_NUMBER video production" \
+            --label "video-production" \
+            --assignee ${{ github.actor }}
+            
+      - name: Update progress tracking
+        run: |
+          DAY_NUMBER=${{ github.event.inputs.day_number || github.run_number }}
+          echo "Day $DAY_NUMBER automation started at $(date)" >> PROGRESS.md
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add PROGRESS.md
+          git commit -m "Automated: Day $DAY_NUMBER started" || exit 0
+          git push
