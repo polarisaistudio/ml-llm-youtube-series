@@ -255,3 +255,19 @@ All visualizations in this article were generated specifically for educational p
 4. **Images are located** in the GitHub repository: `day-01-0827/assets/images/theory/`
 
 The images are designed to be clear, professional, and educational for beginners.
+
+---
+
+## Important Disclaimers
+
+**Collaborative Learning**: I'm sharing my understanding of AI concepts and welcome corrections or additional perspectives from the community. Let's learn together.
+
+**Educational Purpose Only**: This content is for educational purposes only. Always verify information with official documentation and conduct your own research.
+
+**Code Examples**: The code shown is simplified for learning. Production systems require proper error handling, security measures, and testing.
+
+**API Usage**: When using APIs like OpenAI's, be aware of costs, rate limits, and terms of service. Never share your API keys publicly.
+
+**No Professional Advice**: This is not financial, career, or professional advice. Technology trends change rapidly - make informed decisions based on your specific circumstances.
+
+**Accuracy**: While we strive for accuracy, technology evolves quickly. Always check for the latest best practices and updates.

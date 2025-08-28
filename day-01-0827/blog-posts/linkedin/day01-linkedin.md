@@ -118,3 +118,7 @@ When posting on LinkedIn, upload these images:
 2. `06_decision_flowchart.png` - Executive decision framework
 
 Images are located in: `day-01-0827/assets/images/theory/`
+
+---
+
+**Disclaimers**: I'm sharing my understanding of AI concepts and welcome corrections from the community. Let's learn together. Content is for educational purposes only - verify with official docs. Code is simplified for learning. Not professional advice.
