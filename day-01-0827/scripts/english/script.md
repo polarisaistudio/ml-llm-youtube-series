@@ -19,6 +19,7 @@ Let's dive in!"
 ## PART 1: What is Machine Learning? [0:30-3:00]
 
 [ON SCREEN: Split screen - Traditional Programming vs ML]
+[SHOW IMAGE: 01_traditional_vs_ml.png - Display full screen for 3-5 seconds, then minimize to corner]
 
 "So what exactly IS machine learning? Let me break it down with a simple analogy.
 
@@ -29,12 +30,12 @@ Machine Learning is different. It's like showing the child thousands of pictures
 [ON SCREEN: Code comparison visual]
 
 Traditional Programming:
-- Input + Rules ’ Output
+- Input + Rules ï¿½ Output
 - Example: if temperature > 30: return 'hot'
 
 Machine Learning:
-- Input + Output ’ Rules
-- Example: Show many temperatures with labels ’ Learn the pattern
+- Input + Output ï¿½ Rules
+- Example: Show many temperatures with labels ï¿½ Learn the pattern
 
 The key insight? We're not programming the solution; we're programming the ability to find solutions!"
 
@@ -43,8 +44,11 @@ The key insight? We're not programming the solution; we're programming the abili
 ## PART 2: Traditional ML - The Foundation [3:00-6:00]
 
 [ON SCREEN: Timeline showing ML evolution]
+[SHOW IMAGE: 05_ml_timeline.png - Display as background while talking, pan slowly from left to right]
 
 "Traditional Machine Learning, which dominated from the 1950s to around 2010, includes algorithms you've probably heard of:
+
+[TRANSITION TO IMAGE: 02_ml_algorithms.png - Show full screen as you list each algorithm]
 - Linear Regression (predicting house prices)
 - Decision Trees (loan approvals)
 - Support Vector Machines (email spam filters)
@@ -53,6 +57,7 @@ The key insight? We're not programming the solution; we're programming the abili
 These algorithms are AMAZING at specific, well-defined tasks. They're fast, interpretable, and still power countless applications today.
 
 [ON SCREEN: Feature engineering diagram]
+[SHOW IMAGE: 04_feature_engineering.png - Display when explaining feature engineering, use pointer to highlight the transformation]
 
 But here's the catch - traditional ML requires 'feature engineering.' That means humans need to manually identify what matters. For house prices, we'd select features like square footage, number of bedrooms, location. The algorithm can't figure out what's important on its own.
 
@@ -65,6 +70,7 @@ Let me show you a quick example..."
 ## PART 3: Modern AI - The Game Changer [6:00-9:00]
 
 [ON SCREEN: Neural network animation]
+[SHOW IMAGE: 03_neural_network.png - Display prominently, animate if possible by highlighting layers sequentially]
 
 "Around 2012, everything changed with Deep Learning. Instead of hand-crafting features, we let neural networks learn them automatically. This led to breakthroughs in:
 - Computer Vision (2012: AlexNet)
@@ -74,6 +80,7 @@ Let me show you a quick example..."
 The key difference? Modern AI systems learn representations. They don't just learn patterns; they learn what to look for!
 
 [ON SCREEN: Comparison table]
+[SHOW IMAGE: 07_data_types.png - Split screen showing structured vs unstructured data examples]
 
 Traditional ML:
 - Needs structured data
@@ -151,6 +158,7 @@ Notice the difference? Traditional ML solved a specific numerical problem. Moder
 ## PART 5: When to Use What? [13:00-14:00]
 
 [ON SCREEN: Decision flowchart]
+[SHOW IMAGE: 06_decision_flowchart.png - Display prominently, use cursor to trace through decision paths as you explain]
 
 "So which should you use? Here's my practical guide:
 
@@ -175,6 +183,7 @@ The truth? Most real-world applications use BOTH! Netflix uses traditional ML fo
 ## OUTRO [14:00-15:00]
 
 [ON SCREEN: Tomorrow's preview]
+[SHOW IMAGE: 08_ml_pipeline.png - Display as closing visual, highlighting the complete journey]
 
 "And that's machine learning in a nutshell! We've covered:
  What ML is and how it learns from data
@@ -206,7 +215,7 @@ See you tomorrow for Day 2. Keep learning, keep building!"
 
 ## VIDEO DESCRIPTION TEMPLATE:
 ```
-Welcome to Day 1 of our 40-day Machine Learning journey! =€
+Welcome to Day 1 of our 40-day Machine Learning journey! =ï¿½
 
 In this beginner-friendly video, we break down:
 " What machine learning REALLY is (with simple analogies)
@@ -214,9 +223,9 @@ In this beginner-friendly video, we break down:
 " Hands-on coding with both approaches
 " When to use each type in real projects
 
-=Á Code & Resources: github.com/[your-repo]/day-01-ml-introduction
+=ï¿½ Code & Resources: github.com/[your-repo]/day-01-ml-introduction
 = Full Playlist: [playlist-link]
-=¬ Discord Community: [discord-link]
+=ï¿½ Discord Community: [discord-link]
 
 No prerequisites needed - we're starting from absolute zero!
 
