@@ -11,6 +11,9 @@ After years of confusion in the industry, let me clarify the fundamental differe
 
 Think of it this way: Traditional programming is like giving someone a recipe. Machine learning is like letting them taste 1,000 dishes and figure out the recipe themselves.
 
+![Visual comparison showing Traditional Programming vs Machine Learning paradigms](../assets/images/theory/01_traditional_vs_ml.png)
+*The fundamental paradigm shift that changed computing forever*
+
 ## Traditional ML (Your Current Business Tools)
 
 Most enterprise systems today use traditional ML:
@@ -50,6 +53,9 @@ Ask yourself:
 2. Need to explain decisions to regulators? → Traditional ML
 3. Working with documents/images/audio? → Modern AI
 4. Need creative or generative output? → Modern AI
+
+![Decision flowchart for executives choosing between Traditional ML and Modern AI](../assets/images/theory/06_decision_flowchart.png)
+*Executive decision framework: Choose the right tool for your business needs*
 
 ## Practical Implementation Code
 
@@ -103,3 +109,12 @@ What's your organization using - traditional ML, modern AI, or both? Share your 
 💼 Connect if you're on a similar learning journey
 
 #MachineLearning #ArtificialIntelligence #DataScience #DigitalTransformation #Innovation #Technology #Leadership #FutureOfWork
+
+---
+
+## 📸 Images for LinkedIn
+When posting on LinkedIn, upload these images:
+1. `01_traditional_vs_ml.png` - Main paradigm comparison
+2. `06_decision_flowchart.png` - Executive decision framework
+
+Images are located in: `day-01-0827/assets/images/theory/`

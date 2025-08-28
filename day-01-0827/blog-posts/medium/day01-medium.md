@@ -2,7 +2,9 @@
 
 ## Stop Being Confused — Here's What Machine Learning Actually Is
 
-![ML vs AI Comparison](../assets/images/theory/01_traditional_vs_ml.png)
+![Traditional Programming vs Machine Learning - A visual comparison showing the fundamental difference between explicit rules and pattern learning](../assets/images/theory/01_traditional_vs_ml.png)
+
+*Visual comparison: Traditional Programming uses explicit rules while Machine Learning learns patterns from data*
 
 *Part of my 40-day journey teaching Machine Learning & LLMs while learning. Follow along for daily insights!*
 
@@ -42,9 +44,19 @@ Example: Show many temperatures with labels → Learn the pattern
 
 **We're not programming the solution; we're programming the ability to find solutions.**
 
+## The Evolution: From 1950 to 2024
+
+Before diving deeper, let's see how we got here:
+
+![The complete timeline of Machine Learning and AI evolution from 1950 to 2024, showing major breakthroughs](../assets/images/theory/05_ml_timeline.png)
+
+*The evolution of AI: From the Turing Test to ChatGPT and beyond*
+
 ## Traditional ML: The Workhorse of Data Science (1950s-2010)
 
-![Traditional ML Algorithms](../assets/images/theory/02_ml_algorithms.png)
+![Visual examples of traditional ML algorithms including Linear Regression, Decision Trees, SVM, and K-Means Clustering with real data](../assets/images/theory/02_ml_algorithms.png)
+
+*The four pillars of traditional ML: Each algorithm excels at different types of problems*
 
 Traditional machine learning dominated for decades and includes algorithms you use every day:
 
@@ -63,9 +75,15 @@ Traditional ML requires humans to manually identify what matters. For house pric
 
 The algorithm can't figure out what's important on its own. This is both a strength (interpretability) and a weakness (limited capability).
 
+![Feature engineering process showing the transformation from raw data to machine learning features](../assets/images/theory/04_feature_engineering.png)
+
+*Feature engineering: The art of turning raw data into ML-ready features*
+
 ## Modern AI: The Game Changer (2012-Present)
 
-![Neural Network Architecture](../assets/images/theory/03_neural_network.png)
+![Neural network architecture diagram showing layers of interconnected neurons and automatic feature learning](../assets/images/theory/03_neural_network.png)
+
+*Neural networks: Multiple layers learn increasingly complex features automatically*
 
 Around 2012, everything changed with Deep Learning. Instead of hand-crafting features, neural networks learn them automatically.
 
@@ -75,6 +93,14 @@ Around 2012, everything changed with Deep Learning. Instead of hand-crafting fea
 - **2020+**: GPT, DALL-E, and generative AI explode
 
 The difference? Modern AI systems learn representations. They don't just learn patterns; they learn what to look for.
+
+## Structured vs Unstructured Data: The Great Divide
+
+Understanding when to use which approach often comes down to your data type:
+
+![Comparison between structured data (spreadsheets, databases) and unstructured data (text, images, audio)](../assets/images/theory/07_data_types.png)
+
+*The data divide: Traditional ML excels with structured data, Modern AI dominates unstructured data*
 
 ## Real Code: Let's Build Both
 
@@ -122,7 +148,9 @@ Notice the difference? Traditional ML solved a specific numerical problem. Moder
 
 ## The Million-Dollar Question: Which Should You Use?
 
-![Decision Flowchart](../assets/images/theory/06_decision_flowchart.png)
+![Decision flowchart for choosing between Traditional ML and Modern AI based on data type, interpretability needs, and problem complexity](../assets/images/theory/06_decision_flowchart.png)
+
+*Your decision guide: Follow this flowchart to choose the right ML approach for your problem*
 
 ### Use Traditional ML When:
 - ✅ You have structured, tabular data
@@ -144,7 +172,9 @@ Most real-world applications use BOTH. Netflix uses traditional ML for recommend
 
 ## Your Learning Path Forward
 
-![ML Pipeline](../assets/images/theory/08_ml_pipeline.png)
+![Complete machine learning pipeline showing all stages from data collection to deployment and monitoring](../assets/images/theory/08_ml_pipeline.png)
+
+*The ML pipeline: Every successful project follows these essential stages*
 
 Here's my advice after years in the field:
 
@@ -212,3 +242,16 @@ What's your biggest confusion about ML vs AI? Drop a comment below — I read an
 *If you found this helpful, give it a clap 👏 and share it with someone who's ML-curious. Learning together is always better than learning alone.*
 
 **#MachineLearning #ArtificialIntelligence #DeepLearning #Python #DataScience #Programming #TechEducation #LearnToCode**
+
+---
+
+## 📸 Image Credits & Usage Notes
+
+All visualizations in this article were generated specifically for educational purposes. When publishing on Medium:
+
+1. **Upload images directly** to Medium using their image uploader
+2. **Use the file names** as references: `01_traditional_vs_ml.png`, `02_ml_algorithms.png`, etc.
+3. **Keep the alt text** for accessibility - it's included in the image markdown
+4. **Images are located** in the GitHub repository: `day-01-0827/assets/images/theory/`
+
+The images are designed to be clear, professional, and educational for beginners.

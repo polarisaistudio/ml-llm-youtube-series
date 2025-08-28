@@ -2,6 +2,8 @@
 
 ## Twitter/X Thread (Main Post + Replies)
 
+**Image to attach:** `01_traditional_vs_ml.png`
+
 **Main Tweet:**
 🧠 Traditional Programming vs Machine Learning - Finally explained simply!
 
@@ -68,6 +70,11 @@ RT if this thread helped! 🔄
 ## Instagram Posts
 
 ### Post 1: Carousel (Educational)
+**Images to use:** 
+1. `01_traditional_vs_ml.png` (Main slide)
+2. `02_ml_algorithms.png` (Traditional ML examples)
+3. `06_decision_flowchart.png` (When to use what)
+4. `08_ml_pipeline.png` (Complete process)
 **Caption:**
 🤖 ML vs AI: Finally explained simply!
 
@@ -107,6 +114,7 @@ Which one surprised you more?
 #MachineLearning #AI #Python #CodeLife #TechTok
 
 ### Post 3: Timeline Visual
+**Image to use:** `05_ml_timeline.png`
 **Caption:**
 🕐 The Evolution of AI in one image
 

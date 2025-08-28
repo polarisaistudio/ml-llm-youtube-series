@@ -65,9 +65,13 @@ model.predict([[28]])  # Learns to classify without explicit rules
 
 The machine learns the rules from examples. We teach by showing, not by instructing.
 
+![Traditional Programming vs Machine Learning comparison]({{ "/assets/images/day01/01_traditional_vs_ml.png" | relative_url }})
+*Figure 1: The fundamental paradigm shift from rule-based programming to data-driven learning*
+
 ## Traditional ML: The Foundation (1950s-2010)
 
-![Traditional ML Algorithms](/assets/images/day01/02_ml_algorithms.png)
+![Traditional ML Algorithms]({{ "/assets/images/day01/02_ml_algorithms.png" | relative_url }})
+*Figure 2: Visual examples of common traditional ML algorithms with real data demonstrations*
 
 Traditional Machine Learning dominated for decades and remains the backbone of many production systems today.
 
@@ -114,7 +118,8 @@ print(f"Learned relationship: Price = ${model.intercept_[0]:,.0f} + "
 
 ### The Feature Engineering Challenge
 
-![Feature Engineering](/assets/images/day01/04_feature_engineering.png)
+![Feature Engineering Process]({{ "/assets/images/day01/04_feature_engineering.png" | relative_url }})
+*Figure 2.1: The feature engineering process - transforming raw data into ML-ready features*
 
 Traditional ML's biggest challenge: **feature engineering**. Humans must manually identify and extract relevant features:
 
@@ -134,7 +139,8 @@ def engineer_features(raw_house_data):
 
 ## Modern AI: The Revolution (2012-Present)
 
-![Neural Network Architecture](/assets/images/day01/03_neural_network.png)
+![Neural Network Architecture]({{ "/assets/images/day01/03_neural_network.png" | relative_url }})
+*Figure 3: Neural network architecture showing automatic feature learning across multiple layers*
 
 ### The Deep Learning Breakthrough
 
@@ -159,7 +165,8 @@ model.fit(raw_images, labels)  # Can work directly with raw data
 
 ### Timeline of AI Evolution
 
-![ML Timeline](/assets/images/day01/05_ml_timeline.png)
+![ML Timeline]({{ "/assets/images/day01/05_ml_timeline.png" | relative_url }})
+*Figure 3: The complete evolution of AI from 1950 to 2024, showing major milestones and breakthroughs*
 
 Key milestones that changed everything:
 - **2012**: AlexNet wins ImageNet (Deep Learning arrives)
@@ -171,7 +178,8 @@ Key milestones that changed everything:
 
 ## Head-to-Head Comparison
 
-![Decision Flowchart](/assets/images/day01/06_decision_flowchart.png)
+![Decision Flowchart]({{ "/assets/images/day01/06_decision_flowchart.png" | relative_url }})
+*Figure 4: Decision flowchart for choosing between Traditional ML and Modern AI approaches*
 
 ### When to Use What?
 
@@ -259,7 +267,8 @@ print(f"Modern AI: {result[0]['label']}")
 
 ## Data Types: Structured vs Unstructured
 
-![Data Types Comparison](/assets/images/day01/07_data_types.png)
+![Data Types Comparison]({{ "/assets/images/day01/07_data_types.png" | relative_url }})
+*Figure 5: Understanding the difference between structured and unstructured data types*
 
 ### Structured Data (Traditional ML Domain)
 - Spreadsheets, databases, CSV files
@@ -275,7 +284,8 @@ print(f"Modern AI: {result[0]['label']}")
 
 ## The Complete ML Pipeline
 
-![ML Pipeline](/assets/images/day01/08_ml_pipeline.png)
+![ML Pipeline]({{ "/assets/images/day01/08_ml_pipeline.png" | relative_url }})
+*Figure 6: The complete machine learning pipeline from data collection to deployment*
 
 Whether using traditional ML or modern AI, the pipeline remains similar:
 
