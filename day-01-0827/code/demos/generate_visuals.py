@@ -481,7 +481,7 @@ def create_ml_timeline():
     print("✅ Created: ML timeline")
 
 def create_decision_flowchart():
-    """Create decision flowchart for choosing ML vs AI"""
+    """Create decision flowchart for choosing Traditional ML vs Modern AI/Deep Learning"""
     
     fig, ax = plt.subplots(figsize=(14, 10))
     ax.set_xlim(0, 10)
@@ -546,7 +546,7 @@ def create_decision_flowchart():
     draw_box(8.5, 3, 1.8, 0.8, "Modern AI\n(GPT, DALL-E)", 'mediumpurple')
     
     # Title
-    ax.text(5, 9.8, "ML vs AI Decision Guide", fontsize=16, fontweight='bold', ha='center')
+    ax.text(5, 9.8, "Traditional ML vs Modern AI Decision Guide", fontsize=16, fontweight='bold', ha='center')
     
     # Legend
     legend_elements = [

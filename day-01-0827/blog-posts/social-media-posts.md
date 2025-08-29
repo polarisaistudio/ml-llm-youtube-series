@@ -76,7 +76,7 @@ RT if this thread helped! 🔄
 3. `06_decision_flowchart.png` (When to use what)
 4. `08_ml_pipeline.png` (Complete process)
 **Caption:**
-🤖 ML vs AI: Finally explained simply!
+🤖 Traditional ML vs Modern AI: Finally explained simply!
 
 Swipe to see the visual breakdown of Traditional Programming vs Machine Learning.
 

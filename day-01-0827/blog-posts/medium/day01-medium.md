@@ -1,6 +1,8 @@
-# Machine Learning vs AI: The Complete Beginner's Guide You've Been Waiting For (2024)
+# Traditional ML vs Modern AI: The Complete Beginner's Guide You've Been Waiting For (2024)
 
 ## Stop Being Confused — Here's What Machine Learning Actually Is
+
+*Quick note: Machine Learning is a subset of AI, not separate from it. Today we're comparing Traditional ML approaches with Modern AI/Deep Learning approaches - both are part of the broader AI field.*
 
 ![Traditional Programming vs Machine Learning - A visual comparison showing the fundamental difference between explicit rules and pattern learning](../assets/images/theory/01_traditional_vs_ml.png)
 
@@ -235,7 +237,7 @@ This is Day 1 of my 40-day journey into Machine Learning and Large Language Mode
 
 ## Join the Discussion
 
-What's your biggest confusion about ML vs AI? Drop a comment below — I read and respond to everything!
+What's your biggest question about Traditional ML vs Modern AI? Drop a comment below — I read and respond to everything!
 
 ---
 
