@@ -84,11 +84,29 @@ Modern AI architectures and their specialties:
 
 ```python
 # CNNs → Computer vision
+import tensorflow as tf
+
 model = tf.keras.Sequential([
-    tf.keras.layers.Conv2D(32, (3,3), activation='relu'),
+    # Layer 1: Detects edges and basic patterns
+    tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(224,224,3)),
     tf.keras.layers.MaxPooling2D(2,2),
-    # ... learns features automatically from pixels
+    
+    # Layer 2: Combines edges into textures and shapes  
+    tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    # Layer 3: Combines shapes into object parts
+    tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    # Final layers: Classify based on learned features
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax')  # 10 classes
 ])
+
+# Note: What each layer actually learns depends on the data and task
+# Early layers often learn edge detectors, but this isn't guaranteed
 
 # Transformers → Language understanding  
 from transformers import AutoModel
@@ -100,15 +118,30 @@ model = AutoModel.from_pretrained("bert-base")
 # Powers DALL-E, Stable Diffusion, Midjourney
 ```
 
-These systems learn hierarchical representations automatically:
+These systems learn hierarchical representations automatically, but the process varies by architecture:
+
+**CNNs (Computer Vision):**
 ```
-Layer 1: Pixels → Edges
-Layer 2: Edges → Shapes  
-Layer 3: Shapes → Objects
-Layer 4: Objects → Concepts
+Conv Layer 1: Raw pixels → Edge detectors (horizontal, vertical, diagonal)
+Conv Layer 2: Edge combinations → Texture patterns, corners
+Conv Layer 3: Texture patterns → Object parts (wheels, faces, wings)  
+Final layers: Object parts → Full objects (cars, people, birds)
 ```
 
-No manual feature engineering required.
+**Transformers (Language):**
+```
+Layer 1: Tokens → Basic syntax, word relationships
+Layer 2-6: Syntax → Grammar, entity recognition  
+Layer 7-12: Grammar → Complex reasoning, context understanding
+```
+
+**Important:** This is a simplified view. In reality:
+- Layers learn overlapping, distributed representations
+- Different neurons in the same layer learn different features
+- The "edge → shape → object" progression isn't always linear
+- Modern architectures like Vision Transformers work differently than CNNs
+
+No manual feature engineering required, but the learned features are often not interpretable.
 
 ---
 
