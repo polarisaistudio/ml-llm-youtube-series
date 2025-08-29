@@ -85,16 +85,23 @@ The algorithm can't figure out what's important on its own. This is both a stren
 
 ![Neural network architecture diagram showing layers of interconnected neurons and automatic feature learning](../assets/images/theory/03_neural_network.png)
 
-*Neural networks: Multiple layers learn increasingly complex features automatically*
+*Neural networks: One of several architectures in modern AI systems*
 
-Around 2012, everything changed with Deep Learning. Instead of hand-crafting features, neural networks learn them automatically.
+Around 2012, everything changed with Deep Learning. Modern AI isn't just neural networks - it encompasses:
+- **Convolutional Neural Networks (CNNs)** for computer vision
+- **Recurrent Neural Networks (RNNs/LSTMs)** for sequences  
+- **Transformers** for language (GPT, BERT, Claude)
+- **Diffusion Models** for image generation (Stable Diffusion, DALL-E)
+- **Reinforcement Learning** for decision-making (AlphaGo, game AI)
+
+These approaches share a common trait: they learn features automatically rather than requiring hand-crafted rules.
 
 ### Key Breakthroughs:
 - **2012**: AlexNet revolutionizes computer vision
 - **2017**: Transformers enable ChatGPT-like models
 - **2020+**: GPT, DALL-E, and generative AI explode
 
-The difference? Modern AI systems learn representations. They don't just learn patterns; they learn what to look for.
+The key difference? Modern AI systems learn hierarchical representations. They build understanding layer by layer - edges become shapes, shapes become objects, objects become concepts. This is true whether using CNNs for vision, Transformers for language, or other architectures.
 
 ## Structured vs Unstructured Data: The Great Divide
 
@@ -209,8 +216,15 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = MultinomialNB()
 model.fit(X_train, y_train)
 
-# Achieve ~95% accuracy!
+# Calculate accuracy on test set
 accuracy = model.score(X_test, y_test)
+print(f"Test accuracy: {accuracy:.2%}")
+
+# Note: Actual accuracy varies based on data quality and split
+# Production systems should also measure:
+# - Precision: Of predicted spam, how much is actually spam?
+# - Recall: Of actual spam, how much did we catch?
+# - F1 Score: Harmonic mean of precision and recall
 ```
 
 ## Key Takeaways

@@ -411,21 +411,22 @@ def create_ml_timeline():
     
     fig, ax = plt.subplots(figsize=(16, 8))
     
-    # Timeline data
+    # Timeline data - more nuanced and accurate
     events = [
-        (1950, "Turing Test", "Alan Turing proposes test for machine intelligence"),
-        (1957, "Perceptron", "First neural network implementation"),
-        (1980, "Expert Systems", "Rule-based AI dominates"),
-        (1990, "SVM & Random Forests", "Traditional ML flourishes"),
-        (2006, "Deep Learning Revival", "Hinton's deep belief networks"),
-        (2012, "AlexNet", "Deep learning wins ImageNet"),
-        (2014, "GANs", "Generative Adversarial Networks"),
-        (2017, "Transformers", "Attention is all you need"),
-        (2018, "BERT", "Bidirectional language understanding"),
-        (2020, "GPT-3", "175B parameter language model"),
-        (2022, "ChatGPT", "AI goes mainstream"),
-        (2023, "GPT-4", "Multimodal AI"),
-        (2024, "Claude 3", "Constitutional AI advances")
+        (1950, "Turing Test", "Theoretical foundation for AI"),
+        (1957, "Perceptron", "Rosenblatt's linear classifier"),
+        (1969, "AI Winter #1", "Minsky & Papert's limitations"),
+        (1986, "Backpropagation", "Rumelhart et al. revival"),
+        (1995, "SVM", "Vapnik's support vectors"),
+        (2001, "Random Forests", "Breiman's ensemble method"),
+        (2006, "Deep Learning", "Hinton's deep belief networks"),
+        (2012, "AlexNet", "ConvNets dominate vision"),
+        (2014, "GANs", "Goodfellow's generative models"),
+        (2017, "Transformers", "Vaswani et al. attention"),
+        (2018, "BERT/GPT", "Pre-training revolution"),
+        (2020, "GPT-3", "Few-shot learning emerges"),
+        (2022, "Diffusion Models", "DALL-E 2, Stable Diffusion"),
+        (2023, "LLM Explosion", "ChatGPT, Claude, Gemini")
     ]
     
     # Extract years and labels
