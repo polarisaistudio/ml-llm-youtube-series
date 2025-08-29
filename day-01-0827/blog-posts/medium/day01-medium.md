@@ -1,4 +1,4 @@
-# Traditional ML vs Modern AI: The Complete Beginner's Guide (2024)
+# Traditional ML vs Modern AI: The Complete Beginner's Guide (2025)
 
 *Machine Learning is a subset of AI, not separate from it. Today we're comparing Traditional ML approaches with Modern AI/Deep Learning approaches - both are part of the broader AI field.*
 

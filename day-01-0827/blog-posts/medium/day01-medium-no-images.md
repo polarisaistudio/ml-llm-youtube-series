@@ -1,4 +1,4 @@
-# Traditional ML vs Modern AI: The Complete Beginner's Guide (2024)
+# Traditional ML vs Modern AI: The Complete Beginner's Guide (2025)
 
 *Machine Learning is a subset of AI, not separate from it. Today we're comparing Traditional ML approaches with Modern AI/Deep Learning approaches - both are part of the broader AI field.*
 
@@ -250,7 +250,7 @@ from openai import OpenAI
 client = OpenAI()  # or OpenAI(api_key="your-key")
 
 def classify_with_gpt(text):
-    """Current OpenAI API format (as of 2024)"""
+    """Current OpenAI API format (as of 2025)"""
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
