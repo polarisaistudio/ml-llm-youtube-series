@@ -253,78 +253,216 @@ print(f"'{test_text}' -> {result}")
 
 ## Part 4: Decision Framework - Which to Choose?
 
-Here's a practical decision tree in code:
+Here's a practical decision framework (as runnable Python):
 
 ```python
-def choose_ml_approach(problem):
-    if problem.data_type == "tabular":
-        if problem.need_interpretability:
-            return "Traditional ML (Random Forest, XGBoost)"
-        elif problem.dataset_size < 10000:
-            return "Traditional ML (works well with small data)"
+def choose_ml_approach(data_type, dataset_size, need_interpretability, task_type):
+    """
+    Decision helper for choosing ML approach
+    
+    Args:
+        data_type: "tabular", "text", "image", "audio"
+        dataset_size: number of samples (int)
+        need_interpretability: True/False
+        task_type: "classification", "regression", "generation", "clustering"
+    """
+    recommendation = []
+    
+    # Traditional ML scenarios
+    if data_type == "tabular":
+        recommendation.append("Traditional ML is usually best for tabular data")
+        if need_interpretability:
+            recommendation.append("Use: Linear Regression, Decision Trees, Random Forest")
         else:
-            return "Either (consider TabNet or traditional)"
+            recommendation.append("Use: XGBoost, LightGBM, CatBoost")
     
-    elif problem.data_type in ["text", "image", "audio"]:
-        if problem.dataset_size < 1000:
-            return "Modern AI (use pre-trained models)"
+    # Modern AI scenarios
+    elif data_type in ["text", "image", "audio"]:
+        if dataset_size < 1000:
+            recommendation.append("Use pre-trained models - too little data to train from scratch")
         else:
-            return "Modern AI (fine-tune or train from scratch)"
+            recommendation.append("Consider fine-tuning pre-trained models")
     
-    elif problem.task == "generation":
-        return "Modern AI (GANs, Diffusion, Transformers)"
+    # Generation tasks
+    if task_type == "generation":
+        recommendation.append("Modern AI required: GPT for text, Diffusion for images")
     
-    else:
-        return "Hybrid approach likely best"
+    # Size considerations
+    if dataset_size < 100:
+        recommendation.append("Warning: Very small dataset - consider collecting more data")
+    
+    return " | ".join(recommendation)
+
+# Test the decision function
+print(choose_ml_approach("tabular", 5000, True, "classification"))
+# Output: Traditional ML is usually best for tabular data | Use: Linear Regression, Decision Trees, Random Forest
+
+print(choose_ml_approach("text", 500, False, "classification"))  
+# Output: Use pre-trained models - too little data to train from scratch
+
+print(choose_ml_approach("image", 50000, False, "generation"))
+# Output: Consider fine-tuning pre-trained models | Modern AI required: GPT for text, Diffusion for images
 ```
 
-### Real-World Examples:
+### Real-World Examples (with proper imports):
 
 ```python
-# Netflix Recommendation System (Hybrid)
-user_features = traditional_ml.process(user_history)  # Traditional
-thumbnails = modern_ai.generate(movie_content)        # Modern
-recommendations = ensemble.combine(user_features, thumbnails)
+# Example 1: Netflix-style Recommendation (Hybrid approach)
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+import requests  # For API calls
 
-# Bank Loan Approval (Traditional)
-features = extract_financial_features(application)
-risk_score = xgboost_model.predict(features)
-decision = interpret_score(risk_score)  # Must be explainable
+def netflix_style_recommendation(user_id, user_history):
+    # Traditional ML: User preference scoring
+    user_features = pd.DataFrame({
+        'avg_rating': [user_history['ratings'].mean()],
+        'genres_watched': [len(user_history['genres'].unique())],
+        'watch_frequency': [len(user_history) / 30]  # per month
+    })
+    
+    # Traditional model predicts user preferences
+    preference_model = RandomForestClassifier()  # Pre-trained
+    user_preferences = preference_model.predict(user_features)
+    
+    # Modern AI: Generate personalized thumbnails (conceptual)
+    # In reality, this would call an AI service
+    def generate_thumbnail(movie_id, user_preferences):
+        # Would call Stable Diffusion API or similar
+        return f"personalized_thumbnail_{movie_id}_{user_preferences}.jpg"
+    
+    return {
+        'traditional_score': user_preferences,
+        'ai_thumbnail': generate_thumbnail('movie_123', user_preferences)
+    }
 
-# Customer Service Chatbot (Modern)
-response = language_model.generate(customer_query)
-# No feature engineering needed
+# Example 2: Bank Loan Approval (Traditional ML)
+import xgboost as xgb
+import numpy as np
+
+def loan_approval_system(application_data):
+    """Traditional ML for interpretability"""
+    
+    # Extract features (must be explainable)
+    features = np.array([
+        application_data['income'],
+        application_data['credit_score'],
+        application_data['debt_to_income'],
+        application_data['employment_years'],
+        1 if application_data['owns_home'] else 0
+    ]).reshape(1, -1)
+    
+    # Pre-trained XGBoost model
+    model = xgb.XGBClassifier()  # Would be loaded from disk
+    
+    # Get prediction AND explanation
+    approval_probability = model.predict_proba(features)[0][1]
+    
+    # Feature importance (required by law in many jurisdictions)
+    feature_importance = {
+        'income': 0.35,
+        'credit_score': 0.30,
+        'debt_to_income': 0.20,
+        'employment_years': 0.10,
+        'owns_home': 0.05
+    }
+    
+    return {
+        'approved': approval_probability > 0.5,
+        'probability': approval_probability,
+        'explanation': feature_importance
+    }
+
+# Example 3: Customer Service Chatbot (Modern AI)
+from openai import OpenAI
+
+def customer_service_bot(customer_query):
+    """Modern AI for natural language understanding"""
+    
+    client = OpenAI()  # Requires API key
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {
+                "role": "system", 
+                "content": "You are a helpful customer service agent. Be concise and professional."
+            },
+            {
+                "role": "user",
+                "content": customer_query
+            }
+        ],
+        max_tokens=150
+    )
+    
+    return response.choices[0].message.content
+
+# Note: Each approach has different requirements and trade-offs
 ```
 
 ---
 
 ## Part 5: Learning Path & Next Steps
 
-### Week-by-Week Learning Plan:
+### Realistic 3-Month Learning Path:
 
 ```python
-learning_path = {
-    "Week 1-2": {
-        "focus": "Python basics",
-        "practice": ["numpy arrays", "pandas dataframes", "matplotlib"],
-        "project": "Data analysis of any CSV file"
+# Month 1: Foundations (Don't skip this!)
+month_1 = {
+    "Week 1": {
+        "focus": "Python fundamentals",
+        "topics": ["variables", "lists", "loops", "functions"],
+        "practice": "Code 30 minutes daily on Python basics",
+        "milestone": "Write a function that processes a list"
+    },
+    "Week 2": {
+        "focus": "Data handling",
+        "topics": ["reading CSV files", "basic pandas", "simple plots"],
+        "practice": "Load and explore 3 different datasets",
+        "milestone": "Create your first data visualization"
     },
     "Week 3-4": {
-        "focus": "Traditional ML",
-        "practice": ["sklearn basics", "train/test split", "cross-validation"],
-        "project": "Build 3 classifiers on Titanic dataset"
-    },
-    "Week 5-6": {
-        "focus": "Deep Learning basics",
-        "practice": ["PyTorch/TensorFlow", "neural networks", "training loops"],
-        "project": "MNIST digit classifier"
-    },
-    "Week 7-8": {
-        "focus": "Modern AI applications",
-        "practice": ["Hugging Face", "fine-tuning", "prompt engineering"],
-        "project": "Fine-tune a model for your specific use case"
+        "focus": "Traditional ML basics",
+        "topics": ["what is supervised learning", "train/test concept"],
+        "practice": "Use sklearn with built-in datasets only",
+        "milestone": "Build a classifier that beats random guessing"
     }
 }
+
+# Month 2: Traditional ML Mastery
+month_2 = {
+    "Week 5-6": {
+        "focus": "Core algorithms",
+        "topics": ["linear regression", "decision trees", "evaluation metrics"],
+        "practice": "Implement each algorithm on 2-3 problems",
+        "milestone": "Explain when to use which algorithm"
+    },
+    "Week 7-8": {
+        "focus": "Real-world skills",
+        "topics": ["cross-validation", "feature engineering", "model selection"],
+        "practice": "Compete in a Kaggle competition (aim for top 50%)",
+        "milestone": "Build a model that works on unseen data"
+    }
+}
+
+# Month 3: Modern AI Introduction (only after mastering basics)
+month_3 = {
+    "Week 9-10": {
+        "focus": "Understanding pre-trained models",
+        "topics": ["using Hugging Face", "understanding embeddings"],
+        "practice": "Use existing models, don't train from scratch yet",
+        "milestone": "Successfully use a pre-trained model for your task"
+    },
+    "Week 11-12": {
+        "focus": "Simple applications",
+        "topics": ["prompt engineering", "API usage", "combining approaches"],
+        "practice": "Build a hybrid system (traditional + modern)",
+        "milestone": "Deploy a simple ML application"
+    }
+}
+
+# Warning: Don't jump to fine-tuning until you master the basics!
+# Most practitioners use pre-trained models, not custom training
 ```
 
 ### Start Today With This Code:
