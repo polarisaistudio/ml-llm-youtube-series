@@ -87,15 +87,15 @@ Modern AI architectures and their specialties:
 import tensorflow as tf
 
 model = tf.keras.Sequential([
-    # Layer 1: Detects edges and basic patterns
+    # Layer 1: Learns low-level features (data-dependent)
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(224,224,3)),
     tf.keras.layers.MaxPooling2D(2,2),
     
-    # Layer 2: Combines edges into textures and shapes  
+    # Layer 2: Learns combinations of low-level features
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
     tf.keras.layers.MaxPooling2D(2,2),
     
-    # Layer 3: Combines shapes into object parts
+    # Layer 3: Learns higher-level patterns and abstractions
     tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
     tf.keras.layers.MaxPooling2D(2,2),
     
@@ -105,8 +105,8 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(10, activation='softmax')  # 10 classes
 ])
 
-# Note: What each layer actually learns depends on the data and task
-# Early layers often learn edge detectors, but this isn't guaranteed
+# IMPORTANT: What each layer learns is determined by the data and task
+# The "edge detector" explanation is a common misconception
 
 # Transformers → Language understanding  
 from transformers import AutoModel
@@ -120,26 +120,37 @@ model = AutoModel.from_pretrained("bert-base")
 
 These systems learn hierarchical representations automatically, but the process varies by architecture:
 
-**CNNs (Computer Vision):**
+**What CNNs Actually Learn (Research-Based):**
 ```
-Conv Layer 1: Raw pixels → Edge detectors (horizontal, vertical, diagonal)
-Conv Layer 2: Edge combinations → Texture patterns, corners
-Conv Layer 3: Texture patterns → Object parts (wheels, faces, wings)  
-Final layers: Object parts → Full objects (cars, people, birds)
+Early layers: Low-level statistical patterns in pixel neighborhoods
+- May include edge-like patterns, but also textures, colors, noise patterns
+- Features depend heavily on training data and initialization
+- Not universally "edge detectors" as commonly claimed
+
+Middle layers: Combinations of early layer features
+- More complex spatial patterns
+- Some may correspond to object parts, but representation is distributed
+
+Later layers: Task-specific high-level features
+- Optimized for the specific classification task
+- Often not interpretable to humans
 ```
 
-**Transformers (Language):**
+**What Transformers Actually Learn (Interpretability Research):**
 ```
-Layer 1: Tokens → Basic syntax, word relationships
-Layer 2-6: Syntax → Grammar, entity recognition  
-Layer 7-12: Grammar → Complex reasoning, context understanding
+Current research shows:
+- No clear layer-by-layer progression from syntax to reasoning
+- Different attention heads specialize in different linguistic patterns
+- Some heads track syntactic relationships, others semantic similarity
+- "Reasoning" emerges from complex interactions across many layers
+- Layer functions vary significantly between different model architectures
 ```
 
-**Important:** This is a simplified view. In reality:
-- Layers learn overlapping, distributed representations
-- Different neurons in the same layer learn different features
-- The "edge → shape → object" progression isn't always linear
-- Modern architectures like Vision Transformers work differently than CNNs
+**Critical Limitations of These Explanations:**
+- Neural network interpretability is an active research area with many unknowns
+- What we "think" layers learn often comes from post-hoc analysis
+- The same architecture can learn very different representations on different tasks
+- Many learned features have no human-interpretable meaning
 
 No manual feature engineering required, but the learned features are often not interpretable.
 
@@ -158,7 +169,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import random
 
-# Generate a more realistic dataset (in practice, use real data)
+# WARNING: This is a SYNTHETIC DATASET for demonstration only
+# Real spam detection requires thousands of actual emails
+# This example shows the ML process, not production-ready results
+
 spam_phrases = [
     "win free", "click here", "limited offer", "act now", 
     "prize", "winner", "congratulations", "claim", "urgent",
@@ -170,41 +184,46 @@ ham_phrases = [
     "discussion", "agenda", "minutes", "action items"
 ]
 
-# Create 100 sample emails (minimum for meaningful results)
+# Create 100 SYNTHETIC emails (NOT production-ready)
+# Real systems need 10,000+ diverse, real examples
 emails = []
 labels = []
 
 for _ in range(50):
-    # Create spam emails
+    # Create synthetic spam
     spam = f"{random.choice(spam_phrases)} {random.choice(spam_phrases)} {random.choice(['!!!', '!', '$$'])}"
     emails.append(spam)
     labels.append("spam")
     
-    # Create legitimate emails  
+    # Create synthetic legitimate emails  
     ham = f"{random.choice(ham_phrases)} {random.choice(ham_phrases)} {random.choice(['today', 'tomorrow', 'this week'])}"
     emails.append(ham)
     labels.append("ham")
 
-# Traditional ML pipeline
+# Traditional ML pipeline (EDUCATIONAL PURPOSES ONLY)
 vectorizer = TfidfVectorizer(max_features=50)
 X = vectorizer.fit_transform(emails)
 
-# Need sufficient data for train/test split
+# Split synthetic data
 X_train, X_test, y_train, y_test = train_test_split(
     X, labels, test_size=0.2, random_state=42
 )
 
-# Train model
+# Train on synthetic data
 model = MultinomialNB()
 model.fit(X_train, y_train)
 
-# Evaluate (with sufficient data)
+# Evaluate synthetic performance (NOT real-world performance)
 predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
-print(f"Accuracy on test set: {accuracy:.2%}")
+print(f"Accuracy on synthetic test set: {accuracy:.2%}")
+print("WARNING: This is synthetic data accuracy, not real-world performance!")
 
-# Note: With only 100 samples, expect ~70-85% accuracy
-# Production systems need thousands of examples
+# REALITY CHECK:
+# - Synthetic data creates artificially high accuracy
+# - Real spam is much more sophisticated and varied
+# - Production systems require extensive real data and feature engineering
+# - This example demonstrates the ML process, not a working spam filter
 
 # Test on new data
 test_email = "Special offer! Win now! Click here!"
