@@ -847,12 +847,12 @@ import numpy as np
 # Basic implementation
 def simple_example():
     # Add your simple example here
-    print("This is a placeholder - customize for {self.topic}")
+    print(f"This is a placeholder - customize for {self.topic}")
     return True
 
 # Run example
 result = simple_example()
-print(f"Result: {result}")"""
+print(f"Result: {{result}}")"""
     
     def _generate_realistic_code_example(self) -> str:
         """Generate realistic code example - customize per topic"""
@@ -864,14 +864,14 @@ from sklearn.model_selection import train_test_split
 
 def realistic_example():
     # CUSTOMIZE: Add realistic example for {self.topic}
-    print("This is a placeholder - customize for {self.topic}")
+    print(f"This is a placeholder - customize for {self.topic}")
     
     # Include proper error handling
     try:
         # Your realistic implementation here
         pass
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error: {{e}}")
         print("Common solutions: Check data format, verify imports")
     
     return None
