@@ -135,6 +135,248 @@ class EnhancedContentCreator:
         print(f"✅ Generated {len(generated_images)} visual aids for videos")
         return generated_images
     
+    def create_single_english_video_script(self, images: Dict[str, str]) -> Dict[str, str]:
+        """Create single comprehensive English video script"""
+        
+        script = f"""# {self.topic} - Complete Video Script (15 minutes)
+
+## INTRODUCTION (0:00-1:00)
+
+**[VISUAL: Title card - "{self.topic}"]**
+
+Welcome to today's lesson on {self.topic}. 
+
+**[VISUAL: Show {images.get('concept_overview', '01_concept_overview.png')} - Topic overview]**
+
+By the end of this video, you'll understand:
+- The core concepts behind {self.topic}
+- How to implement it with Python code
+- Real-world applications and examples
+- Best practices and common pitfalls
+
+Let's dive in!
+
+## PART 1: CORE CONCEPTS (1:00-5:00)
+
+**[VISUAL: Show {images.get('comparison', '02_comparison.png')} - Key comparisons]**
+
+Let me explain the fundamental concepts...
+
+### Why This Matters
+
+{self.topic} is essential because:
+- Solves real problems in data science
+- Forms the foundation for more advanced topics
+- Used daily by ML practitioners
+
+**[VISUAL: Show {images.get('architecture', '03_architecture.png')} - System architecture]**
+
+### Key Components
+
+The main components include:
+1. Data input and validation
+2. Core processing logic
+3. Output generation and formatting
+
+## PART 2: CODE IMPLEMENTATION (5:00-10:00)
+
+**[VISUAL: Show {images.get('step_by_step', '04_step_by_step.png')} - Step-by-step process]**
+
+Now let's implement this with Python:
+
+### Simple Example
+
+```python
+{self._generate_simple_code_example()}
+```
+
+**[VISUAL: Show code execution and output]**
+
+### Real-World Example
+
+```python
+{self._generate_realistic_code_example()}
+```
+
+**[VISUAL: Show {images.get('real_example', '06_real_example.png')} - Real application]**
+
+## PART 3: BEST PRACTICES & COMMON MISTAKES (10:00-13:00)
+
+**[VISUAL: Show {images.get('common_mistakes', '07_common_mistakes.png')} - Common errors]**
+
+### Best Practices
+
+1. Always validate input data
+2. Handle errors gracefully
+3. Document your code
+4. Use meaningful variable names
+
+### Common Mistakes to Avoid
+
+1. Not checking data types
+2. Ignoring edge cases  
+3. Poor error handling
+4. Skipping validation steps
+
+**[VISUAL: Show {images.get('decision_tree', '05_decision_tree.png')} - Decision framework]**
+
+## SUMMARY & NEXT STEPS (13:00-15:00)
+
+**[VISUAL: Show {images.get('learning_path', '08_learning_path.png')} - Learning progression]**
+
+### What We Learned
+
+1. Core concepts and theory
+2. Practical implementation
+3. Best practices
+4. Common pitfalls
+
+### Your Action Items
+
+1. Practice with the code examples
+2. Try the exercises in the project files
+3. Experiment with your own data
+4. Join the community discussion
+
+### What's Next
+
+Tomorrow we'll build on today's foundation to explore...
+
+## CLOSING
+
+Remember: every expert was once a beginner. Keep practicing!
+
+If this helped you, please like and subscribe. See you in the next video!
+
+**[END SCREEN: Subscribe, next video preview, social links]**
+
+---
+*Runtime: ~15 minutes*
+"""
+
+        return {"complete_script": script}
+
+    def create_single_chinese_video_script(self, images: Dict[str, str]) -> Dict[str, str]:
+        """Create single comprehensive Chinese video script"""
+        
+        script = f"""# {self.topic} - 完整视频脚本 (15分钟)
+
+## 开场介绍 (0:00-1:00)
+
+**[视觉：标题卡 - "{self.topic}"]**
+
+欢迎来到今天关于{self.topic}的课程。
+
+**[视觉：显示 {images.get('concept_overview', '01_concept_overview.png')} - 主题概览]**
+
+看完这个视频，你将理解：
+- {self.topic}背后的核心概念
+- 如何用Python代码实现
+- 实际应用和例子
+- 最佳实践和常见陷阱
+
+让我们开始吧！
+
+## 第1部分：核心概念 (1:00-5:00)
+
+**[视觉：显示 {images.get('comparison', '02_comparison.png')} - 关键对比]**
+
+让我解释基本概念...
+
+### 为什么重要
+
+{self.topic}至关重要，因为：
+- 解决数据科学中的实际问题
+- 为更高级主题奠定基础
+- ML从业者日常使用
+
+**[视觉：显示 {images.get('architecture', '03_architecture.png')} - 系统架构]**
+
+### 关键组件
+
+主要组件包括：
+1. 数据输入和验证
+2. 核心处理逻辑
+3. 输出生成和格式化
+
+## 第2部分：代码实现 (5:00-10:00)
+
+**[视觉：显示 {images.get('step_by_step', '04_step_by_step.png')} - 分步流程]**
+
+现在让我们用Python实现：
+
+### 简单示例
+
+```python
+{self._generate_simple_code_example()}
+```
+
+**[视觉：显示代码执行和输出]**
+
+### 实际示例
+
+```python
+{self._generate_realistic_code_example()}
+```
+
+**[视觉：显示 {images.get('real_example', '06_real_example.png')} - 实际应用]**
+
+## 第3部分：最佳实践和常见错误 (10:00-13:00)
+
+**[视觉：显示 {images.get('common_mistakes', '07_common_mistakes.png')} - 常见错误]**
+
+### 最佳实践
+
+1. 始终验证输入数据
+2. 优雅地处理错误
+3. 记录你的代码
+4. 使用有意义的变量名
+
+### 要避免的常见错误
+
+1. 不检查数据类型
+2. 忽略边缘情况
+3. 错误处理不当
+4. 跳过验证步骤
+
+**[视觉：显示 {images.get('decision_tree', '05_decision_tree.png')} - 决策框架]**
+
+## 总结与下一步 (13:00-15:00)
+
+**[视觉：显示 {images.get('learning_path', '08_learning_path.png')} - 学习进程]**
+
+### 我们学到的内容
+
+1. 核心概念和理论
+2. 实际实现
+3. 最佳实践
+4. 常见陷阱
+
+### 你的行动项
+
+1. 练习代码示例
+2. 尝试项目文件中的练习
+3. 用自己的数据实验
+4. 参与社区讨论
+
+### 下一步
+
+明天我们将在今天的基础上探索...
+
+## 结语
+
+记住：每个专家都曾是初学者。继续练习！
+
+如果这对你有帮助，请点赞和订阅。下个视频见！
+
+**[结束画面：订阅、下个视频预览、社交链接]**
+
+---
+*时长：约15分钟*
+"""
+
+        return {"complete_script": script}
+
     def create_english_video_scripts(self, images: Dict[str, str]) -> Dict[str, str]:
         """Create English video scripts with visual references"""
         
@@ -891,13 +1133,13 @@ result = realistic_example()"""
         print("🎨 Generating visual aids...")
         images = self.generate_visual_aids()
         
-        # Generate English scripts
-        print("📝 Creating English video scripts...")
-        english_scripts = self.create_english_video_scripts(images)
+        # Generate English script
+        print("📝 Creating English video script...")
+        english_scripts = self.create_single_english_video_script(images)
         
-        # Generate Chinese scripts
-        print("📝 Creating Chinese video scripts...")
-        chinese_scripts = self.create_chinese_video_scripts(images)
+        # Generate Chinese script
+        print("📝 Creating Chinese video script...")
+        chinese_scripts = self.create_single_chinese_video_script(images)
         
         # Save all content
         self._save_content_to_files(english_scripts, chinese_scripts, images)
