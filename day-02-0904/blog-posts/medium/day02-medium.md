@@ -22,6 +22,8 @@ data = np.array([1, 2, 3, 4, 5])
 print(f"Mean: {np.mean(data)}, Std: {np.std(data)}")
 ```
 
+> 📝 **Try This Now**: Create a NumPy array with your last 5 expenses and calculate the average. It's that easy!
+
 ### 2. Pandas - Your Data Swiss Army Knife
 Pandas makes data manipulation intuitive:
 
@@ -45,14 +47,19 @@ Here's a simple pattern you'll use constantly:
 
 ```python
 def prepare_data(filepath):
+    """The golden pattern: Load → Clean → Transform
+    You'll use this in 90% of your ML projects!"""
+    
     # Load
     data = pd.read_csv(filepath)
+    print(f"Loaded {len(data)} records")
     
     # Clean
-    data = data.dropna()
+    data = data.dropna()  # Remove missing values
+    print(f"After cleaning: {len(data)} records")
     
     # Transform
-    features = data.select_dtypes(include=[np.number])
+    features = data.select_dtypes(include=[np.number])  # Keep only numbers
     
     return features
 ```

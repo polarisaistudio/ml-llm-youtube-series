@@ -25,7 +25,8 @@ def load_and_prep(file):
 
 💡 Beginner Tip: Start with small datasets (<1000 rows) to understand concepts before scaling up.
 
-❌ Common Mistake: Not checking data types before processing. Always use df.dtypes first!
+❌ Common Mistake: Not checking data types before processing. 
+✅ Quick Fix: Always use `df.dtypes` first, then `pd.to_numeric()` to convert!
 
 📚 Today's Practice:
 1. Load any CSV file with Pandas
